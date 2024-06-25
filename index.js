@@ -29,4 +29,37 @@ var findMedianSortedArrays = function(nums1, nums2) {
         return midal/2;
     }
 };
-console.log(findMedianSortedArrays([3], [-2,-1]))
+// console.log(findMedianSortedArrays([3], [-2,-1]))
+
+var myAtoi = function(s) {
+    let regex = /^[a-zA-Z]+$/;
+    for (let i = 0; i < s.length; i++) {
+        const element = s[i];
+        if (regex.test(element)) {
+            break
+        }
+        if (element==0 && s[i-1]==0) {
+            console.log("fast 0")
+        }
+        console.log(element)
+    }
+};
+// myAtoi('01337c0d3')
+
+// Palindrome Number
+// Given an integer x, return true if x is a palindrome, and false otherwise.
+
+var isPalindrome = function(x) {
+    const xString = x.toString();
+    const XArray= xString.split('');
+    const number = XArray.join('');
+    const reversed = XArray.reverse().join('');
+    if (number==reversed){
+        return true;
+    }
+    else{
+        return false;
+    }
+};
+
+console.log(isPalindrome(101))

@@ -30,7 +30,6 @@ var addTwoNumbers = function(l1, l2) {
     for(let i = intArr.length - 1; i >= 0; i--){
         result.push(intArr[i]);
     }
-
     return result;
 };
 console.log(addTwoNumbers([9,9,9,9,9,9,9],[9,9,9,9]))
