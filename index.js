@@ -29,4 +29,4 @@ var findMedianSortedArrays = function(nums1, nums2) {
         return midal/2;
     }
 };
-// console.log(findMedianSortedArrays([3], [-2,-1]))
+console.log(findMedianSortedArrays([3], [-2,-1]))
