@@ -51,7 +51,7 @@ var myAtoi = function(s) {
 
 var isPalindrome = function(x) {
     const xString = x.toString();
-    const XArray= xString.split('');
+    const XArray = xString.split('');
     const number = XArray.join('');
     const reversed = XArray.reverse().join('');
     if (number==reversed){
@@ -62,4 +62,31 @@ var isPalindrome = function(x) {
     }
 };
 
-console.log(isPalindrome(101))
+// console.log(isPalindrome(101))
+
+
+
+function reverse(x) {
+    const INT_MIN = -Math.pow(2, 31);
+    const INT_MAX = Math.pow(2, 31) - 1;
+    let sign = x < 0 ? -1 : 1;
+    x = Math.abs(x);
+    let reversed = 0;
+    while (x !== 0) {
+        reversed = reversed * 10 + x % 10;
+        x = Math.floor(x / 10);
+    }
+    reversed *= sign;
+    if (reversed < INT_MIN || reversed > INT_MAX) {
+        return 0;
+    }
+    return reversed;
+}
+
+// Example usage:
+console.log(reverse(123));      // Output: 321
+console.log(reverse(-123));     // Output: -321
+console.log(reverse(120));      // Output: 21
+console.log(reverse(1534236469));  // Output: 0 (since it overflows)
+
+console.log(reverse(-123));
