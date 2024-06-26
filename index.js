@@ -65,28 +65,31 @@ var isPalindrome = function(x) {
 // console.log(isPalindrome(101))
 
 
+// Reverse Integer
 
-function reverse(x) {
+var reverse = function(x) {
     const INT_MIN = -Math.pow(2, 31);
     const INT_MAX = Math.pow(2, 31) - 1;
-    let sign = x < 0 ? -1 : 1;
-    x = Math.abs(x);
-    let reversed = 0;
-    while (x !== 0) {
-        reversed = reversed * 10 + x % 10;
-        x = Math.floor(x / 10);
-    }
-    reversed *= sign;
-    if (reversed < INT_MIN || reversed > INT_MAX) {
+    const reversedString = x.toString().split('').reverse().join('');
+    const reversedNumber = parseInt(reversedString) * Math.sign(x);
+    if (reversedNumber < INT_MIN || reversedNumber > INT_MAX) {
         return 0;
     }
-    return reversed;
-}
+    return reversedNumber;
+};
+// console.log(reverse(-123));
 
-// Example usage:
-console.log(reverse(123));      // Output: 321
-console.log(reverse(-123));     // Output: -321
-console.log(reverse(120));      // Output: 21
-console.log(reverse(1534236469));  // Output: 0 (since it overflows)
+var intToRoman = function(num) {
+    const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    const symbols =['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV','I'];
 
-console.log(reverse(-123));
+    let rasult = ""
+    for (let i = 0; i < values.length; i++) {
+        while ( num >= values[i]) {
+            rasult += symbols[i];
+            num -= values[i];
+        }
+    }
+    return rasult
+};
+console.log(intToRoman(123))
