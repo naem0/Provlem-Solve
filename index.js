@@ -77,9 +77,9 @@ var reverse = function(x) {
     }
     return reversedNumber;
 };
-// console.log(reverse(-123));
+// console.log(reverse(-34123));
 
-var intToRoman = function(num) {
+var intToRoman  = function(num) {
     const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
     const symbols =['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV','I'];
 
@@ -92,4 +92,17 @@ var intToRoman = function(num) {
     }
     return rasult
 };
-console.log(intToRoman(123))
+// console.log(intToRoman(10))
+
+var mergeKLists = function(lists) {
+    let newArray=[]
+    for (let i = 0; i < lists.length; i++) {
+        const nextedArray = lists[i];
+        for (let j = 0; j < nextedArray.length; j++) {
+            const element = nextedArray[j];
+            newArray.push(element)
+        }
+    }
+    return newArray.sort(function(a, b){return a-b})
+};
+console.log(mergeKLists([[1,4,5],[1,3,4],[2,6]]))
